@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.App {
+  height: 100vh;
+  background-color: #ff99c9;
+  background-image: radial-gradient(at 53% 73%, hsla(178, 99%, 61%, 1) 0px, transparent 50%), radial-gradient(at 52% 80%, hsla(230, 77%, 70%, 1) 0px, transparent 50%), radial-gradient(at 48% 35%, hsla(295, 71%, 69%, 1) 0px, transparent 50%), radial-gradient(at 37% 10%, hsla(215, 81%, 63%, 1) 0px, transparent 50%), radial-gradient(at 59% 87%, hsla(163, 74%, 66%, 1) 0px, transparent 50%), radial-gradient(at 57% 63%, hsla(285, 66%, 79%, 1) 0px, transparent 50%), radial-gradient(at 57% 77%, hsla(284, 67%, 75%, 1) 0px, transparent 50%);
+}

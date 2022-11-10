@@ -1,6 +1,6 @@
 import { Wave, getTotalWaves, getWaves } from "../utils/waves";
 
-export const connectWallet = async (setCurrentAccount: React.Dispatch<React.SetStateAction<string>>, setWaves: React.Dispatch<React.SetStateAction<Wave[] | undefined>>, setTotalWaves: React.Dispatch<React.SetStateAction<number | undefined>>): Promise<void> => {
+export const connectWallet = async (setCurrentAccount: React.Dispatch<React.SetStateAction<string>>, setWaves: React.Dispatch<React.SetStateAction<Wave[] | undefined>>, setTotalWaves: React.Dispatch<React.SetStateAction<number | undefined>>, setShowAlert: React.Dispatch<React.SetStateAction<string>>): Promise<void> => {
   if (window.ethereum) {
     if (window.ethereum.networkVersion !== 5) {
       try {
@@ -31,5 +31,7 @@ export const connectWallet = async (setCurrentAccount: React.Dispatch<React.SetS
     setCurrentAccount(accounts[0]);
     getWaves(setWaves);
     getTotalWaves(setTotalWaves);
+  } else {
+    setShowAlert("Metamask not installed");
   }
 };

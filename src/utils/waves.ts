@@ -47,14 +47,15 @@ export const getTotalWaves = async (setTotalWaves: React.Dispatch<React.SetState
     console.log(error);
   }
 };
-export const makeWave = async (): Promise<void> => {
+export const makeWave = async (e: React.MouseEvent<HTMLElement>, message: string): Promise<void> => {
+  e.preventDefault();
   try {
     const { ethereum } = window;
     if (ethereum) {
       const provider = new ethers.providers.Web3Provider(ethereum);
       const signer = provider.getSigner();
       const wavePortalContract = new ethers.Contract(contractAddress, WawePortal.abi, signer);
-      const waveTxn = await wavePortalContract.wave();
+      const waveTxn = await wavePortalContract.wave(message);
       await waveTxn.wait();
     } else {
       alert("Ethereum object doesn't exist!");
