@@ -10,10 +10,10 @@ const Waves: FC<Props> = ({ waves, totalWaves }) => {
   return (
     <div className="mt-20 mx-auto max-w-xl sm:mt-0">
       <div className="text-xl font-bold text-gray-900 text-center sm:my-5 ">Total messages: {totalWaves}</div>
-      <div className=" h-1/2 overflow-auto w-auto sm:h-1/2 absolute scrollbar-thin ">
+      <div className="h-44 sm:h-40 md:h-72 overflow-auto w-auto scrollbar-thin">
         {waves.map((wave, index) => {
           return (
-            <div key={index} className="mx-1 p-4 relative block border-black border-2 sm:p-8 mt-3">
+            <div key={index} className="mx-2 p-5 relative block border-black border-2 sm:p-8 mt-3">
               <span className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"></span>
 
               <div className="justify-between sm:flex">
